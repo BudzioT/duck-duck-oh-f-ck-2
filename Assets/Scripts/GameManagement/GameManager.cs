@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
     [Header("Fire Alarm Effect Reference")]
     public FireAlarmScript fireAlarmScript;
 
+    public CoinManager coinManager;
+
     [Header("Timing Settings")]
     [Tooltip("Minimum seconds between fire alarm activations")]
     public float minDelay = 8f;
 
     [Tooltip("Maximum seconds between fire alarm activations")]
-    public float maxDelay = 20f;
+    public float maxDelay = 16f;
 
     [Tooltip("How long the alarm stays active before turning off")]
     public float alarmDuration = 20f;
@@ -20,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        coinManager.AddCoins(2);
+
         if (fireAlarmScript == null)
         {
             Debug.LogWarning("RandomEffectManager: FireAlarmEffect not assigned!");
@@ -42,7 +46,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(alarmDuration);
 
             // Change this to run when switch is activated
-            fireAlarmScript.DeactivateAlarm();
+            //fireAlarmScript.DeactivateAlarm();
             Debug.Log("Fire alarm deactivated!");
         }
     }

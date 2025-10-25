@@ -20,7 +20,7 @@ public class FireEmojiMover : MonoBehaviour
 
         direction = Random.insideUnitCircle.normalized;
         float sizeFactor = rectTransform.localScale.x;
-        speed = Random.Range(500f, 1000f) / sizeFactor;
+        speed = Random.Range(300f, 700f) / sizeFactor;
 
         Debug.Log($"FireEmojiMover Initialized. Speed={speed}, Direction={direction}, rectTransform={rectTransform}, canvasRect={canvasRect}");
     }
