@@ -9,7 +9,7 @@ public class FireEmojiManager : MonoBehaviour
     public GameObject fireEmojiPrefab;
 
     [Header("Spawn Settings")]
-    public float spawnInterval = 0.1f;
+    public float spawnInterval = 2f;
     public int maxFireEmojis = 50;
 
     private bool isActive = false;
